@@ -42,14 +42,14 @@ DieTest >> testDiceRoll [
 	| d1 d2 h |
 	d1 := Die new.
 	d1 faces: 10.
-	
+
 	d2 := Die new.
 	d2 faces: 6.
 	h := Dice new.
 	h
 		add: d1;
-		add: d1.
-	100 timesRepeat: [ h roll between: 2 and: 16]
+		add: d2.
+	100 timesRepeat: [ self assert: (h roll between: 2 and: 16) ]
 ]
 
 { #category : 'tests' }
@@ -58,7 +58,7 @@ DieTest >> testDieRoll [
 	| d |
 	d := Die new.
 	d faces: 6.
-	100 timesRepeat: [ d roll between: 1 and: 6] 
+	100 timesRepeat: [ self assert: (d roll between: 1 and: 6) ]
 ]
 
 { #category : 'tests' }
